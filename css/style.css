@@ -1,0 +1,85 @@
+#main_ul {
+  width: 100%;
+  height: calc(1vw-1vh);
+  position: fixed;
+  z-index: 1;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+#main_ul.scrolled {
+  background-color: #fff !important;
+  transition: background-color 200ms linear;
+}
+
+#main_ul.noscrolled {
+  background: transparent !important;
+  transition: background 350ms linear;
+}
+
+li {
+  float: left;
+}
+
+.list_elem {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 15px 20px;
+  text-decoration: none;
+  font-size: 1.5vw;
+}
+
+.list_elem.scrolled{
+	color: #000;
+	transition: color 200ms linear;
+}
+
+.list_elem.noscrolled{
+	color: #FFF;
+	transition: color 350ms linear;
+}
+
+
+#top-div{
+	width: 100%;
+	height: 600px;
+	background-image: url('../img/wallpaper.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+#top-text{
+	text-align: center;
+	color: #FFF;
+	padding-top: 150px;
+}
+
+#top-div-text_1{
+	font-size: 5vw;
+	padding-bottom: 1.5%;
+}
+
+#top-div-text_2{
+	font-size: 1.9vw;
+}
+
+#services-div{
+	height: 300px;
+}
+
+#services-text{
+	text-align: center;
+	padding-top: 1%;
+	font-size: 3vw;
+}
+
+@media screen and (max-width: 1280px){
+	#top-div{
+		height: 300px;
+	}
+}
+

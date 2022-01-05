@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+	<title>Document</title>
+</head>
+<body id="body">
+	<header id="header">
+	<nav id="nav">
+		<ul id="main_ul">
+			<li><a href="" class="list_elem" id="main_elem">Главное</a></li>
+			<li><a href="#top" class="list_elem">Услуги</a></li>
+			<li><a href="" class="list_elem">Преимущество</a></li>
+			<li><a href="" class="list_elem">FAQ</a></li>
+		</ul>
+	</nav>
+</header>
+<main id="main">
+	<div id="top-div">
+		<div id="top-text">
+		<p id="top-div-text_1">Python Developer</p>
+		<p id="top-div-text_2">посмотреть информацию ниже</p>
+		</div>
+	</div>
+	<div id="services-div"><a name=top>
+	 <p id="services-text">Услуги</p>
+	</a>
+	</div>
+</main>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script>
+	var lastScrollTop = 0;
+$(window).scroll(function(event){
+   var $nav = $('#main_ul');
+   var $elem = $('.list_elem')
+   var st = $(this).scrollTop();
+   if (st > lastScrollTop){
+    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+    $elem.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+   } else {
+    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+    $elem.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+    $nav.toggleClass('noscrolled', $(this).scrollTop() > $nav.height());
+    $elem.toggleClass('noscrolled', $(this).scrollTop() > $nav.height());
+   }
+   lastScrollTop = st;
+});
+</script>
+</body>
+</html>
