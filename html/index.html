@@ -3,7 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,36 +23,41 @@
 </header>
 <main id="main">
 	<div id="top-div">
-		<a name='main'>
 		<div id="top-text">
-		<p id="top-div-text_1" >Python-Разработчик<br> Garik</p>
-		
+		<p id="top-div-text_1">Python Developer</p>
+		<p id="top-div-text_2">посмотреть информацию ниже</p>
 		</div>
-	</a>
 	</div>
-	<div id="services-div" data-aos="fade-up" data-aos-duration="1500"><a name=top>
-	 <p id="services-text" class="p-text">Услуги</p>
-	 	 <div id="sevices-inner">
-	 	<p id="services-left-p" class="p-text">
-	 		      Скрипты<br>
+	<div id="services-div"><a name=top>
+	 <p id="services-text">Услуги</p>
+	 <div id="sevices-inner">
+	 	<p id="services-left-p">
+	 		Скрипты на<br>
 	 		На языке программирования<br>
-	 		        Python
-	 	</p>
-	<p id="services-right-p" class="p-text">
-	 Создание Telegram, Discord, Whatsapp ботов<br>
-	 Web Crawling, Automation<br>
-	 Админ панель для ботов<br>
-	 Установка скрипта на хостинг
+	 		Python
 	 	</p>
 	 </div>
 	</a>
 	</div>
 </main>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-<script src="js/anim.js"></script>
 <script>
-  AOS.init();
+	var lastScrollTop = 0;
+$(window).scroll(function(event){
+   var $nav = $('#main_ul');
+   var $elem = $('.list_elem')
+   var st = $(this).scrollTop();
+   if (st > lastScrollTop){
+    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+    $elem.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+   } else {
+    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+    $elem.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+    $nav.toggleClass('noscrolled', $(this).scrollTop() > $nav.height());
+    $elem.toggleClass('noscrolled', $(this).scrollTop() > $nav.height());
+   }
+   lastScrollTop = st;
+});
 </script>
 </body>
 </html>
