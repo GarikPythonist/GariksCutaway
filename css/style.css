@@ -93,26 +93,40 @@
 }
 
 .services{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	width: 20vw;
 	height: 38vh;
 	margin-bottom: 10px;
 	border-radius: 22px;
 	box-shadow: 0 0px 4px 3px rgb(0 0 0 / 20%);
-	text-align: center;
 }
 
 .s-header{
 	font-weight: 600;
 	font-size: 1.5vw;
 	padding-top: 3.3%;
+	text-align: center;
 }
 
 .s-about{
+	justify-content: center;
+	padding-left: 3px;
+	margin: auto;
 	padding-top: 3%;
 	font-size: 1vw;
 }
 
+#price{
+	justify-content: flex-end;
+	align-content: center;
+	margin-top: auto;
+	font-size: 1vw;
+}
+
 .order{
+	justify-content: flex-end;
 	color: #FFF;
 	border:none;
     border-radius: 3px;
@@ -121,6 +135,14 @@
     height: 5vh;
     width: 50%;
     font-size: 1.5vw;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.order:hover{
+	box-shadow: 0 0px 4px 1px rgb(0 0 0 / 20%);
+	cursor: pointer;
 }
 
 @media screen and (max-width: 1280px){
@@ -138,15 +160,10 @@
 		width: 44vw;
 		height: 30vh;
 	}
-	.s-header{
-		font-size: 2.5vw;
-	}
-	.s-about{
-		font-size: 2.2vw;
-	}
-	.order{
-		font-size: 3vw;
-	}
+	.s-header{font-size: 2.5vw;}
+	.s-about{font-size: 2.2vw;}
+	.order{font-size: 3vw}
+	#price{font-size:2vw;}
 }
 
 @media screen and (max-width: 600px){
