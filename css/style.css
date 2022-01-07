@@ -1,174 +1,107 @@
-#main_ul {
-	display: flex;
-	justify-content: center;
-  width: 100%;
-  height: calc(1vw-1vh);
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.sidenav {
+  height: 100%;
+  width: 0;
   position: fixed;
   z-index: 1;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background: transparent;
+  top: 0;
+  left: 0;
+  background-color: #FFF;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
 }
 
-#main_ul.scrolled {
-  background-color: #fff !important;
-  transition: background-color 200ms linear;
-    box-shadow: 0 2px 4px 4px rgb(0 0 0 / 20%);
+.sidenav .info{
+  padding-bottom: 19px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2.5vh;
+/* identical to box height */
 
+letter-spacing: -0.06em;
 }
 
-#main_ul.noscrolled {
-  background: transparent !important;
-  transition: background 200ms linear;
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  color: #000;
+  display: block;
+  transition: 0.3s;
 }
 
-.list_elem {
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#burger{
+  font-size:30px;
+  cursor:pointer;
+  position: absolute;
+  z-index: 1;
+  color: #FFF;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+#main_div{
+  justify-content: center;
   display: flex;
   flex-direction: column;
-  color: white;
-  text-align: center;
-  padding: 15px 20px;
-  text-decoration: none;
-  font-size: 1.5vw;
+  align-items: center;
+  width: 100%;
+  height: 721px;
+  background-image: url('../img/wallpaper.jpg'); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-.list_elem.scrolled{
-	color: #000;
-	transition: color 200ms linear;
+#name{
+  height: auto;
+  word-break: break-word;
+  width: 52.604vw;
+  overflow: hidden;
+  border-right: 1vw solid black; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  font-size: 7.5vw;
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
 }
 
-.list_elem.noscrolled{
-	color: #FFF;
-	transition: color 350ms linear;
+#subname{
+  font-size: 3.333vw;
 }
 
-
-#top-div{
-	width: 100%;
-	height: 750px;
-	background-image: url('../img/wallpaper.jpg');
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
+#name, #subname{
+  font-family: Roboto Mono;
+  color: #FFF;
+  letter-spacing: -0.1em;
 }
 
-#top-text{
-	text-align: center;
-	color: #FFF;
-	padding-top: calc((20vw + 20vh) / 2);
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 52.604vw }
 }
 
-#laptop{
-	width: 200px;
-	height: 200px;
-}
-
-.top-div-text_1{
-	word-wrap : break-word;
-	font-size: 5vw;
-	padding-bottom: 1.5%;
-  	white-space: nowrap; /* Keeps the content on a single line */
-  	margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  	letter-spacing: 1px; /* Adjust as needed */
-}
-
-#services-div{
-	height: 800px;
-}
-
-#services-text{
-	text-align: center;
-	padding-top: 3%;
-	font-size: 3vw;
-}
-
-#services-inner{
-	width: 100%;
-	height: auto;
-	display: grid;
-	grid-template-columns: 25% 25% 25% 25%;
-	justify-items: center;
-	margin-top: 20px;
-}
-
-.services{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 20vw;
-	height: 38vh;
-	margin-bottom: 10px;
-	border-radius: 22px;
-	box-shadow: 0 0px 4px 3px rgb(0 0 0 / 20%);
-}
-
-.s-header{
-	font-weight: 600;
-	font-size: 1.5vw;
-	padding-top: 3.3%;
-	text-align: center;
-}
-
-.s-about{
-	justify-content: center;
-	padding-left: 3px;
-	margin: auto;
-	padding-top: 3%;
-	font-size: 1vw;
-}
-
-#price{
-	justify-content: flex-end;
-	align-content: center;
-	margin-top: auto;
-	font-size: 1vw;
-}
-
-.order{
-	justify-content: flex-end;
-	color: #FFF;
-	border:none;
-    border-radius: 3px;
-    background: #0085FF;
-    font-weight: 700;
-    height: 5vh;
-    width: 50%;
-    font-size: 1.5vw;
-    margin: auto;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.order:hover{
-	box-shadow: 0 0px 4px 1px rgb(0 0 0 / 20%);
-	cursor: pointer;
-}
-
-@media screen and (max-width: 1280px){
-	#top-div{
-		height: 400px;
-	}
-	#top-text{
-		padding-top: 150px;
-	}
-	#services-inner{
-		grid-template-columns: 50% 50%;
-		grid-template-rows: 50% 50%;
-	}
-	.services{
-		width: 44vw;
-		height: 30vh;
-	}
-	.s-header{font-size: 2.5vw;}
-	.s-about{font-size: 2.2vw;}
-	.order{font-size: 3vw}
-	#price{font-size:2vw;}
-}
-
-@media screen and (max-width: 600px){
-	.services{
-		width: 44vw;
-		height: 25vh;
-	}
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: black; }
 }
