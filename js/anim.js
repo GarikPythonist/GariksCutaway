@@ -6,7 +6,7 @@ $(window).scroll(function(event){
    if (st > lastScrollTop){
     $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
     $elem.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
-   } else {
+       } else {
     $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
     $elem.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
     $nav.toggleClass('noscrolled', $(this).scrollTop() > $nav.height());

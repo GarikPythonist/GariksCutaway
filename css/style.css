@@ -1,4 +1,6 @@
 #main_ul {
+	display: flex;
+	justify-content: center;
   width: 100%;
   height: calc(1vw-1vh);
   position: fixed;
@@ -22,12 +24,9 @@
   transition: background 200ms linear;
 }
 
-li {
-  float: left;
-}
-
 .list_elem {
-  display: block;
+  display: flex;
+  flex-direction: column;
   color: white;
   text-align: center;
   padding: 15px 20px;
@@ -65,9 +64,13 @@ li {
 	height: 200px;
 }
 
-#top-div-text_1{
+.top-div-text_1{
+	word-wrap : break-word;
 	font-size: 5vw;
 	padding-bottom: 1.5%;
+  	white-space: nowrap; /* Keeps the content on a single line */
+  	margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  	letter-spacing: 1px; /* Adjust as needed */
 }
 
 #services-div{
@@ -80,20 +83,44 @@ li {
 	font-size: 3vw;
 }
 
-#services-left-p{
-	font-size: 2.5vw;
-	padding-left: 20px;
-	padding-top: 10%;
-	float: left;
-	font-weight: bold;
-	color: #303030;
+#services-inner{
+	width: 100%;
+	height: auto;
+	display: grid;
+	grid-template-columns: 25% 25% 25% 25%;
+	justify-items: center;
+	margin-top: 20px;
 }
 
-#services-right-p{
-	font-size: 2vw;
-	padding-top: 9%;
-	float: right;
-	padding-right: 30px; 
+.services{
+	width: 20vw;
+	height: 38vh;
+	margin-bottom: 10px;
+	border-radius: 22px;
+	box-shadow: 0 0px 4px 3px rgb(0 0 0 / 20%);
+	text-align: center;
+}
+
+.s-header{
+	font-weight: 600;
+	font-size: 1.5vw;
+	padding-top: 3.3%;
+}
+
+.s-about{
+	padding-top: 3%;
+	font-size: 1vw;
+}
+
+.order{
+	color: #FFF;
+	border:none;
+    border-radius: 3px;
+    background: #0085FF;
+    font-weight: 700;
+    height: 5vh;
+    width: 50%;
+    font-size: 1.5vw;
 }
 
 @media screen and (max-width: 1280px){
@@ -103,5 +130,28 @@ li {
 	#top-text{
 		padding-top: 150px;
 	}
+	#services-inner{
+		grid-template-columns: 50% 50%;
+		grid-template-rows: 50% 50%;
+	}
+	.services{
+		width: 44vw;
+		height: 30vh;
+	}
+	.s-header{
+		font-size: 2.5vw;
+	}
+	.s-about{
+		font-size: 2.2vw;
+	}
+	.order{
+		font-size: 3vw;
+	}
 }
 
+@media screen and (max-width: 600px){
+	.services{
+		width: 44vw;
+		height: 25vh;
+	}
+}
